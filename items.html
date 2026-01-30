@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="icons/css/all.min.css">
+    <title>Items</title>
+</head>
+<body style="background: url(images/dark-bg.jpg);">
+        <nav>
+        <div class="logo"><img src="images/logo.png" alt=""></div>
+        <ul class="ul">
+            <li class="li"><a href="index.html">Home</a></li>
+            <li class="li"><a href="">Explore</a></li>
+            <li class="li active"><a href="items.html">Item Details</a></li>
+            <li class="li"><a href="">Auther</a></li>
+            <li class="li"><a href="">Create Yours</a></li>
+        </ul>
+        <div style="display: flex; flex-direction: row; gap: 5px;">
+             <div class="Shopcart"><i class="fa-solid fa-cart-shopping cartHandeler openCart"></i></div>
+        <div class="bars">
+                    <i class="fa-solid fa-bars"></i>
+                 </div>
+        </div>
+       
+        </nav>
+         <!-- start theme section -->
+          <button class="theme">Theme</button>
+            <main>
+                <div>
+                    <button class="pink">Pink</button>
+                    <button class="gray">Gray</button>
+                    <button class="blue">Blue</button>
+                     <button class="original">Original</button>
+                </div>
+            </main>
+         <!-- start theme section -->
+        <header style="background: var(--main-color); min-height: 100px;"></header>
+         <div class="toUp">
+        <i class="fa-solid fa-arrow-up-long"></i>
+        </div>
+      <section class="OurItems">
+        <div class="title">
+           <div class="sec-title">
+                <div></div>
+                <h2>Discover Some Of Our Items.</h2>
+            </div>
+        </div>
+        <div class="container">
+        </div>
+      </section>
+       <footer>
+            <p>Copyright © 2022 Liberty NFT Marketplace Co., Ltd. All rights reserved. </p>
+            <p>Designed by <strong>Ruba Naim</strong></p>
+         </footer>
+          <div class="cart">
+                <div><i class="fa-solid fa-xmark cartHandeler closeCart"></i></div>
+                <p>Cart Items</p>
+               <div class="itemss">
+               </div>
+                <hr>
+                <div class="total">
+                    <span>Total</span>
+                    <span class="totalPrice">$0.00</span>
+                </div>
+            </div>
+            <div class="overlay cartHandeler closeCart"></div>
+         <script src="JavaScript/jQuery.js"></script>
+         <script src="JavaScript/scripts/shared.js"></script>
+         <script src="JavaScript/scripts/items.js"></script>
+</body>
+</html>
