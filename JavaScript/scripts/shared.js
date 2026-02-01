@@ -49,6 +49,7 @@ function addItem(index){
     myCart.push(products[index])
     }
     displayItems()
+    addedSuccessfully(index)
 }
 displayItems()
 function displayItems(){
@@ -174,4 +175,60 @@ let savedColor = localStorage.getItem('themeColor')
 
 if(savedColor){
     document.documentElement.style.setProperty('--main-color', savedColor)
+}
+
+function addedSuccessfully(index){
+    let name=products[index].name
+    let box=document.createElement('div')
+    box.className='addedSuccessfully'
+    let firstDiv=document.createElement('div')
+    let icon = document.createElement('i')
+    icon.className='fa-solid fa-check-double'
+    firstDiv.append(icon)
+    let secondDiv=document.createElement('div')
+    let p1=document.createElement('p')
+    p1.innerHTML='Success added product'
+    let p2=document.createElement('p')
+    p2.innerHTML=name
+    secondDiv.append(p1)
+    secondDiv.append(p2)
+    thirdDiv=document.createElement('div')
+    button1=document.createElement('button')
+    button1.innerHTML='Close'
+    thirdDiv.append(button1)
+    button2=document.createElement('button')
+    button2.innerHTML='Open Cart'
+    thirdDiv.append(button2)
+    box.append(firstDiv)
+    box.append(secondDiv)
+    box.append(thirdDiv)
+    document.body.append(box)
+    
+   let overlay = document.querySelector('.overlay')
+   let cart = document.querySelector('.cart')
+    setTimeout(()=>{
+       box.classList.add('open')
+        overlay.classList.add('active')
+    }, 100)
+
+    const removeBox=()=>{
+       box.classList.remove('open')
+       setTimeout(()=>{
+          box.remove()
+         }, 500)
+    }
+     const boxHandeler=()=>{
+         overlay.classList.remove('active')
+         removeBox()
+         
+    }
+    button1.onclick=boxHandeler
+    overlay.onclick=()=>{
+        boxHandeler()
+        cart.classList.remove('active')
+    }
+    button2.onclick=()=>{
+        removeBox()
+        cart.classList.add('active')
+    }
 }
