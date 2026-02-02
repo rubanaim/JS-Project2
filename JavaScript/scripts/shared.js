@@ -73,12 +73,9 @@ const card=myCart.map((el,index)=>
                     </div>
                 </div>`).join()
      if(myCart.length>0){
-        console.log(true);
-        
         document.querySelector('.cart .itemss').innerHTML=card
     } else{
         document.querySelector('.cart .itemss').innerHTML='Your cart is empty'
-        console.log(false);
 }
 let totalPrice=document.querySelector('.totalPrice')
 const t=myCart.reduce((a,b)=>{return a+(b.price*b.number)},0)
@@ -108,11 +105,16 @@ function deletItem(index){
 }
 
 function multiples(index, operation){
+
  if(operation=='add'){
      myCart[index].number++
  }
  else {
-     myCart[index].number--
+    if(myCart[index].number>1){
+     myCart[index].number--}
+     else{
+        deletItem(index)
+     }
  }
  displayItems()
 }
